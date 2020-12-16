@@ -1,0 +1,56 @@
+Data Dictionary:,,,,
+Table,,,,
+Airport:,Field name,datatype,constraint,description
+,ident,string,primary key,This is unique identifier of the airport
+,type,string,None,"This is the type of the airportwhich can be heliport, small, medium, large etc."
+,name,string,None,This is the name of the airport.
+,state,string,None,This is the state of the airport
+,municipality,string,None,This is the municipality of the airport
+,gps_code,string,None,This is a three digit or four digit gps code.
+,iata_code,string,None,"An IATA airport code, also known as an IATA location identifier, IATA station code, or simply a location identifier, is a three-letter geocode designating many airports and metropolitan areas around the world, defined by the International Air Transport Association (IATA)."
+,iso_country,string,None,A identifier for the country
+,coordinates,string,None,This is the local cordinates - longitude and latitude
+,,,,
+,,,,
+Visa,visatype,string,not null,This stores various visa type of the immigrant
+,visa_type_key,string,primary key,This is the unique identifier of the visa types
+,,,,
+,,,,
+,,,,
+State Demographics,stateCode,string,None,This stores the unique state code
+,state,string,None,This is the name of the state
+,medianAge,double,None,This is the median age of the population
+,totalPopulation,double,None,This is the total population
+,malePopulation,double,None,This is the total male population
+,femalePopulation,double,None,This is the total female population
+,numberOfVeterans,double,None,This is the number of veterans in the population
+,foreignBorn,double,None,This is the number of foreign born in  the population
+,averageHouseholdSize,double,None,This is the average household size of the population
+,id,long,Primary key,This is the unique identifier of the state. 
+,,,,
+,,,,
+time,time,date ,primary key,This stores the date in yyyy-mm-dd format
+,arrival_day,integer,None,This is the day in the date field
+,arrival_month,integer,None,This is the month in the date field
+,arrival_year,integer,None,This is the year in the date field
+,arrival_week,integer,None,This is the week in the yearly calendar
+,arrival_weekday,integer,None,This is the weekday in number format
+,,,,
+,,,,
+immigration,cicid                ,integer,Primary Key,This the unique identifier for each immigrant record. 
+,mode                 ,string,None,This is the mode of travel. 
+,bornCountry         ,integer,None,
+,year                 ,integer,None,This is the year of the arrival
+,month                ,integer,None,This is the month of arrival
+,birthyear            ,integer,None,This is the birth year 
+,residentCountry      ,string,None,This is the resident country
+,visa_type_key        ,integer,Foreign Key,This is the key that links to the visa_type_table
+,state_code_id        ,integer,Foreign Key,This is the key that links to the state table.
+,arrivalDate,date,Foreign Key,This is the key that links to the time table.
+,airline,string,None,Airline used to arrive in U.S.
+,flightNumber,string,None,Flight number of Airline used to arrive in U.S
+,gender,string,None,One character flag to identify the gender
+,arrivalPort,string,None,
+,matchFlag,string,None,Match of arrival and departure records
+,airport_id,string,Foreign Key,The unique airport identifier
+,,,,
